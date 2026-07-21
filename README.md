@@ -1,269 +1,51 @@
 # 🏥 IntelliICU — Enterprise AI Clinical Decision Support Platform
 
-<p align="center">
-  <strong>AI-Powered Clinical Decision Support, ICU Monitoring, Clinical Copilot, and Hospital Intelligence Platform</strong>
-</p>
+> **AI-Powered Clinical Decision Support, ICU Monitoring, Clinical Copilot, and Hospital Intelligence Platform**
 
-<p align="center">
-  An enterprise-grade healthcare AI platform designed to support clinicians with intelligent patient monitoring, real-time telemetry, AI-assisted clinical decision support, and hospital management capabilities.
-</p>
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?logo=fastapi)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-Frontend-61dafb?logo=react)](https://reactjs.org)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql)](https://postgresql.org)
+[![Docker](https://img.shields.io/badge/Docker-Containerized-2496ed?logo=docker)](https://docker.com)
+[![License](https://img.shields.io/badge/License-MIT-purple)](LICENSE)
+[![Backend](https://img.shields.io/badge/Backend-Live%20on%20Railway-success)](#)
+[![Frontend](https://img.shields.io/badge/Frontend-Live%20on%20Railway-success)](#)
 
 ---
 
-## 🚀 Live Deployment
+## 📌 What is IntelliICU?
 
-The IntelliICU platform is deployed on Railway with separate frontend and backend services.
+IntelliICU is an enterprise-grade AI Clinical Decision Support System (CDSS) that **supports clinicians with intelligent patient monitoring, real-time telemetry, AI-assisted clinical decisions, and hospital management — all in one unified platform.**
 
-### 🌐 Live Application
+Right now in every hospital, clinical teams face:
+- Alert fatigue from hundreds of monitoring signals
+- Manual correlation of patient vitals across disconnected systems
+- Time-consuming incident documentation
+- No AI layer to interpret clinical patterns or suggest next steps
 
-[**Open IntelliICU Live Demo**](https://intelliicu-frontend-production.up.railway.app)
+**IntelliICU brings an AI copilot directly into the clinical workflow — giving doctors context-aware support without replacing their judgment.**
 
-### 🏗️ Deployment Architecture
+> **Medical Disclaimer:** IntelliICU is built for educational, research, and portfolio purposes. It is not a certified medical device and is not intended to replace professional clinical judgment.
 
-```text
-User / Browser
-      │
-      ▼
-React + Vite Frontend
-Nginx • Railway
-      │
-      │ HTTPS REST API
-      │ Secure WebSocket
-      ▼
-FastAPI Backend
-Railway
-      │
-      ▼
-PostgreSQL Database
+---
+
+## 🏗️ Architecture
+
 ```
-
----
-
-## 📌 Overview
-
-**IntelliICU** is an Enterprise AI Clinical Decision Support System (CDSS) designed to demonstrate how Artificial Intelligence, Machine Learning, real-time patient monitoring, and modern full-stack technologies can be integrated into a unified healthcare platform.
-
-The system provides dedicated interfaces for administrators and healthcare professionals while supporting AI-assisted clinical workflows, live ICU monitoring, telemetry visualization, clinical copilot functionality, and hospital management.
-
-IntelliICU is designed as a portfolio-quality enterprise healthcare application with a scalable architecture, separated frontend and backend services, REST APIs, authentication, database integration, containerization, and cloud deployment capabilities.
-
-The long-term vision of IntelliICU is to build a comprehensive AI-powered healthcare intelligence platform inspired by modern enterprise healthcare ecosystems.
-
-> **Important:** IntelliICU is an educational and research-oriented project. It is not intended to replace professional medical judgment or be used as a certified medical device.
-
----
-
-# ✨ Key Features
-
-## 🔐 Authentication & Security
-
-- Secure user authentication
-- JWT-based authentication
-- Password hashing
-- Role-Based Access Control (RBAC)
-- Protected API endpoints
-- Token validation
-- Role-specific application access
-
----
-
-## 👨‍⚕️ Doctor Dashboard
-
-A dedicated dashboard for healthcare professionals providing access to clinical information and AI-assisted workflows.
-
-Features include:
-
-- Clinical overview
-- Patient information
-- ICU monitoring
-- Clinical decision support
-- AI-powered clinical tools
-- Hospital workflow access
-- Real-time patient information
-
----
-
-## 🛡️ Admin Dashboard
-
-Centralized administrative dashboard for managing the IntelliICU platform.
-
-Features include:
-
-- Platform overview
-- User management
-- Hospital management
-- System statistics
-- Administrative controls
-- Role management
-- Operational monitoring
-
----
-
-## 🤖 AI Clinical Copilot
-
-The Clinical Copilot provides an AI-assisted interface designed to support healthcare professionals during clinical workflows.
-
-Potential capabilities include:
-
-- Clinical information assistance
-- Patient context analysis
-- Decision-support insights
-- Risk interpretation
-- Clinical recommendations
-- Medical knowledge assistance
-- Context-aware AI interactions
-
-The Clinical Copilot is designed as a **decision-support tool** and does not replace professional medical judgment.
-
----
-
-## 🏥 Hospital Assistant
-
-AI-powered hospital assistance functionality designed to support hospital operations and healthcare workflows.
-
-Features may include:
-
-- Hospital information assistance
-- Clinical workflow support
-- Healthcare-related queries
-- Operational assistance
-- AI-powered interaction
-- Context-aware responses
-
----
-
-## 📡 Live ICU Monitoring
-
-The Live Monitoring module provides real-time visualization of patient and ICU information.
-
-Capabilities include:
-
-- Live patient monitoring
-- Vital-sign visualization
-- Patient status tracking
-- Clinical alerts
-- Real-time dashboard updates
-- ICU patient overview
-
----
-
-## 📊 Telemetry Monitoring
-
-The Telemetry Monitor provides continuous visualization of patient physiological data.
-
-Designed to support monitoring of information such as:
-
-- Heart rate
-- Blood pressure
-- Oxygen saturation
-- Respiratory rate
-- Temperature
-- Other clinical telemetry signals
-
-The telemetry interface demonstrates how real-time patient information can be integrated into an AI-powered clinical platform.
-
----
-
-## 👥 User Management
-
-Administrative user management functionality for controlling access to the platform.
-
-Features include:
-
-- View users
-- Manage user accounts
-- Role assignment
-- User status management
-- Access control
-- Administrative actions
-
----
-
-# 🖼️ Application Screenshots
-
-## 🔐 Login
-
-The IntelliICU authentication interface provides secure access to the platform.
-
-![IntelliICU Login](screenshots/login.png)
-
----
-
-## 🛡️ Admin Dashboard
-
-The Admin Dashboard provides centralized control and visibility across the IntelliICU platform.
-
-![Admin Dashboard](screenshots/admin-dashboard.png)
-
----
-
-## 👨‍⚕️ Doctor Dashboard
-
-The Doctor Dashboard provides healthcare professionals with access to clinical workflows, monitoring tools, and patient information.
-
-![Doctor Dashboard](screenshots/doctor-dashboard.png)
-
----
-
-## 🤖 Clinical Copilot
-
-The AI-powered Clinical Copilot assists healthcare professionals with clinical information and decision-support workflows.
-
-![Clinical Copilot](screenshots/clinical-copilot.png)
-
----
-
-## 🏥 Hospital Assistant
-
-The Hospital Assistant provides an AI-powered interface for healthcare and hospital-related assistance.
-
-![Hospital Assistant](screenshots/hospital-assistant.png)
-
----
-
-## 📡 Live Monitoring
-
-The Live Monitoring dashboard provides real-time visibility into patient and ICU information.
-
-![Live Monitoring](screenshots/live-monitoring.png)
-
----
-
-## 📈 Telemetry Monitor
-
-The Telemetry Monitor provides visualization of real-time physiological and clinical telemetry data.
-
-![Telemetry Monitor](screenshots/telemetry-monitor.png)
-
----
-
-## 👥 User Management
-
-The User Management interface allows administrators to manage platform users, roles, and access.
-
-![User Management](screenshots/user-management.png)
-
----
-
-# 🏗️ System Architecture
-
-IntelliICU follows a modular full-stack architecture designed for scalability, maintainability, and future healthcare AI integrations.
-
-```text
                         ┌─────────────────────┐
                         │        Users        │
-                        │                     │
                         │  Admins / Doctors   │
                         └──────────┬──────────┘
                                    │
                                    ▼
                         ┌─────────────────────┐
                         │   React Frontend    │
-                        │                     │
-                        │ Dashboards & UI     │
+                        │  Dashboards & UI    │
+                        │  Nginx Production   │
                         └──────────┬──────────┘
                                    │
-                              REST API
+                              HTTPS REST API
+                              Secure WebSocket
                                    │
                                    ▼
                      ┌───────────────────────────┐
@@ -274,609 +56,388 @@ IntelliICU follows a modular full-stack architecture designed for scalability, m
              │                     │                     │
              ▼                     ▼                     ▼
     ┌────────────────┐    ┌────────────────┐    ┌────────────────┐
-    │ Authentication │    │ Clinical / AI  │    │ Hospital APIs  │
-    │     & RBAC      │    │    Services    │    │ & Management   │
+    │ Authentication │    │  Clinical / AI │    │ Hospital APIs  │
+    │   & RBAC       │    │   Services     │    │ & Management   │
     └───────┬────────┘    └───────┬────────┘    └───────┬────────┘
             │                     │                     │
             └─────────────────────┼─────────────────────┘
                                   │
                                   ▼
                        ┌─────────────────────┐
-                       │   Database Layer    │
-                       │                     │
-                       │ SQLAlchemy /        │
-                       │ PostgreSQL          │
+                       │   PostgreSQL DB     │
+                       │   SQLAlchemy ORM    │
                        └─────────────────────┘
 ```
 
 ---
 
-# 📁 Project Structure
+## ✨ Features
 
-```text
-INTELLIICU/
-│
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   ├── workflows/
-│   └── pull_request_template.md
-│
-├── assets/
-│   └── Project assets and static resources
-│
-├── backend/
-│   └── FastAPI backend application
-│
-├── config/
-│   └── Application configuration
-│
-├── docker/
-│   └── Docker configuration files
-│
-├── docs/
-│   └── Project documentation
-│
-├── frontend/
-│   └── React + Vite frontend application
-│
-├── infra/
-│   └── Infrastructure configuration
-│
-├── screenshots/
-│   ├── admin-dashboard.png
-│   ├── clinical-copilot.png
-│   ├── doctor-dashboard.png
-│   ├── hospital-assistant.png
-│   ├── live-monitoring.png
-│   ├── login.png
-│   ├── telemetry-monitor.png
-│   └── user-management.png
-│
-├── scripts/
-│   └── Development and deployment scripts
-│
-├── src/
-│   └── Supporting source code
-│
-├── tests/
-│   └── Automated tests
-│
-├── .env.example
-├── .gitignore
-├── CONTRIBUTING.md
-├── docker-compose.yml
-├── LICENSE
-└── README.md
-```
+### 🔐 Authentication & Security
+- JWT-based secure authentication
+- Password hashing (bcrypt)
+- Role-Based Access Control (RBAC) — Admin and Doctor roles
+- Protected API endpoints with token validation
+- CORS configuration for secure cross-origin requests
 
-> Local development directories such as `.venv/`, `node_modules/`, and generated build artifacts are excluded from version control and are not part of the repository structure.
+### 👨‍⚕️ Doctor Dashboard
+- Clinical overview and patient information
+- ICU monitoring access
+- AI-powered clinical tools
+- Real-time patient data
+- Hospital workflow integration
+
+### 🛡️ Admin Dashboard
+- Platform overview and system statistics
+- User management and role assignment
+- Hospital management controls
+- Operational monitoring
+- Administrative actions
+
+### 🤖 AI Clinical Copilot
+- AI-assisted clinical decision support
+- Patient context analysis
+- Risk interpretation and clinical recommendations
+- Medical knowledge assistance
+- Context-aware interactions powered by LLM
+- Decision-support tool — does not replace professional judgment
+
+### 🏥 Hospital Assistant
+- AI-powered hospital operations support
+- Clinical workflow assistance
+- Healthcare-related query handling
+- Context-aware responses
+
+### 📡 Live ICU Monitoring
+- Real-time patient and ICU visualization
+- Vital sign tracking with live updates
+- Clinical alert system
+- ICU patient overview dashboard
+
+### 📊 Telemetry Monitoring
+- Continuous patient physiological data visualization
+- Heart rate, blood pressure, oxygen saturation, respiratory rate, temperature
+- Real-time telemetry streams via WebSocket
+- Clinical signal visualization interface
+
+### 👥 User Management
+- View and manage platform users
+- Role assignment and access control
+- User status management
+- Administrative user actions
 
 ---
 
-# 🛠️ Technology Stack
+## 🛠️ Tech Stack
 
-## Frontend
-
-- React
-- Vite
-- JavaScript
-- Modern Component-Based UI
-- REST API Integration
-- WebSocket Integration
-- Responsive Dashboard Design
-- Nginx Production Server
-
-## Backend
-
-- Python
-- FastAPI
-- REST API Architecture
-- Pydantic
-- SQLAlchemy
-- Uvicorn
-
-## Database
-
-- PostgreSQL
-- SQLAlchemy ORM
-
-## AI & Machine Learning
-
-- Python
-- Scikit-learn
-- Pandas
-- NumPy
-- Machine Learning Models
-- Retrieval-Augmented Generation (RAG)
-- AI Clinical Decision Support
-- Clinical Copilot
-- LLM Provider Architecture
-
-## Security
-
-- JWT Authentication
-- Password Hashing
-- Role-Based Access Control (RBAC)
-- Protected API Routes
-- CORS Configuration
-- Environment-Based Secrets
-
-## Real-Time Communication
-
-- WebSockets
-- Live ICU Telemetry
-- Real-Time Dashboard Updates
-- Patient Monitoring Streams
-
-## DevOps & Infrastructure
-
-- Docker
-- Docker Compose
-- GitHub
-- GitHub Actions
-- Railway
-- Nginx
-- CI/CD Pipeline
-- Cloud Deployment Architecture
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| Frontend | React + Vite | Modern component-based UI |
+| UI Server | Nginx | Production static file serving |
+| Backend | FastAPI + Python | REST API + WebSocket server |
+| Database | PostgreSQL | Persistent relational storage |
+| ORM | SQLAlchemy | Database abstraction layer |
+| Auth | JWT + bcrypt | Secure authentication |
+| AI/ML | scikit-learn, Pandas, NumPy | ML model integration |
+| RAG | LlamaIndex / LangChain | Clinical knowledge retrieval |
+| LLM | OpenAI / Gemini / Ollama | Clinical copilot inference |
+| Real-time | WebSockets | Live telemetry and monitoring |
+| Deploy | Railway | Cloud hosting (frontend + backend) |
+| CI/CD | GitHub Actions | Automated build validation |
+| Containers | Docker + Docker Compose | Containerized deployment |
 
 ---
 
-# 🚀 Getting Started
+## 🌐 Live Demo
 
-## Prerequisites
+| Service | URL |
+|---------|-----|
+| Live Application | [Open IntelliICU](#) |
+| Backend API | [IntelliICU Backend](#) |
+| API Docs (Swagger) | [FastAPI Swagger Docs](#) |
+| GitHub | [github.com/Sumeet2005/IntelliICU](https://github.com/Sumeet2005/IntelliICU) |
 
-Before running IntelliICU locally, make sure you have installed:
+---
 
+## 🚀 Quick Start
+
+### Prerequisites
 - Python 3.10+
 - Node.js 20+
 - npm
 - Git
 - Docker (optional)
-- PostgreSQL (if running the database locally)
+- PostgreSQL (if running locally)
 
----
-
-# 📥 Clone the Repository
-
+### 1. Clone the repo
 ```bash
 git clone https://github.com/Sumeet2005/IntelliICU.git
 cd IntelliICU
 ```
 
----
-
-# ⚙️ Environment Configuration
-
-Create your local environment file using the provided example:
-
+### 2. Configure environment
 ```bash
 cp .env.example .env
+# Fill in your values
 ```
 
-On Windows PowerShell:
+Key environment variables:
+```env
+# Database
+POSTGRES_URL=your_postgres_connection_string
 
-```powershell
-Copy-Item .env.example .env
+# Auth
+JWT_SECRET=your_jwt_secret
+
+# LLM Provider (choose one)
+OPENAI_API_KEY=your_openai_key
+GEMINI_API_KEY=your_gemini_key
+# OR for local: OLLAMA_BASE_URL=http://localhost:11434
 ```
 
-Configure the required environment variables inside `.env`.
-
-> Never commit your actual `.env` file, production credentials, database passwords, JWT secrets, or API keys to GitHub.
-
----
-
-# 🐍 Backend Setup
-
-Navigate to the backend directory:
-
+### 3. Start the backend
 ```bash
 cd backend
-```
-
-Create a virtual environment:
-
-```bash
 python -m venv .venv
-```
 
-Activate the virtual environment.
-
-### Windows
-
-```powershell
+# Windows
 .venv\Scripts\Activate.ps1
-```
 
-### Linux / macOS
-
-```bash
+# Mac/Linux
 source .venv/bin/activate
-```
 
-Install backend dependencies:
-
-```bash
 pip install -r requirements.txt
-```
-
-Start the FastAPI development server:
-
-```bash
 uvicorn app.main:app --reload
 ```
 
-The backend will typically be available at:
+Backend runs at `http://localhost:8000`
+Swagger docs at `http://localhost:8000/docs`
 
-```text
-http://localhost:8000
-```
-
-Interactive Swagger API documentation:
-
-```text
-http://localhost:8000/docs
-```
-
-Alternative ReDoc documentation:
-
-```text
-http://localhost:8000/redoc
-```
-
----
-
-# 💻 Frontend Setup
-
-Open a new terminal and navigate to the frontend directory:
-
+### 4. Start the frontend
 ```bash
 cd frontend
-```
-
-Install dependencies:
-
-```bash
 npm install
-```
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
-The frontend will typically be available at:
+Frontend runs at `http://localhost:5173`
 
-```text
-http://localhost:5173
-```
-
-To create a production build:
-
-```bash
-npm run build
-```
-
----
-
-# 🐳 Docker Setup
-
-The application can be started using Docker Compose:
-
+### 5. Docker (alternative — runs everything at once)
 ```bash
 docker compose up --build
 ```
 
-To stop the containers:
+---
 
-```bash
-docker compose down
+## 📡 API Endpoints
+
+### Authentication
+```
+POST /auth/login        — JWT login
+POST /auth/register     — Create new user
+POST /auth/refresh      — Refresh token
 ```
 
-To rebuild the application:
+### Clinical
+```
+GET  /api/patients      — List ICU patients
+GET  /api/patients/{id} — Patient detail + vitals
+GET  /api/monitoring    — Live monitoring feed
+POST /api/copilot/chat  — Clinical copilot interaction
+```
 
-```bash
-docker compose up --build --force-recreate
+### Admin
+```
+GET  /api/users         — List users (admin only)
+POST /api/users         — Create user (admin only)
+PUT  /api/users/{id}    — Update user role
+GET  /api/hospital      — Hospital management data
 ```
 
 ---
 
-# 🔐 Environment Variables
+## 🖼️ Screenshots
 
-The project uses environment variables for application configuration, database connectivity, authentication, AI providers, and deployment settings.
+### 🔐 Login
+![IntelliICU Login](screenshots/login.png)
 
-Refer to:
+### 🛡️ Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
 
-```text
-.env.example
-```
+### 👨‍⚕️ Doctor Dashboard
+![Doctor Dashboard](screenshots/doctor-dashboard.png)
 
-for the available environment configuration template.
+### 🤖 Clinical Copilot
+![Clinical Copilot](screenshots/clinical-copilot.png)
 
-Important configuration categories include:
+### 🏥 Hospital Assistant
+![Hospital Assistant](screenshots/hospital-assistant.png)
 
-- Project metadata
-- PostgreSQL database configuration
-- JWT authentication settings
-- Clinical LLM provider configuration
-- OpenAI configuration
-- Google Gemini configuration
-- Ollama configuration
-- LM Studio configuration
-- Deployment settings
+### 📡 Live Monitoring
+![Live Monitoring](screenshots/live-monitoring.png)
 
-> Production secrets should be configured directly through the deployment platform and must never be committed to source control.
+### 📈 Telemetry Monitor
+![Telemetry Monitor](screenshots/telemetry-monitor.png)
 
----
-
-# 📚 API Documentation
-
-Once the backend is running, FastAPI automatically provides interactive API documentation.
-
-### Swagger UI
-
-```text
-http://localhost:8000/docs
-```
-
-### ReDoc
-
-```text
-http://localhost:8000/redoc
-```
-
-The documentation allows developers to:
-
-- Explore available API endpoints
-- View request and response schemas
-- Test API requests
-- Review authentication requirements
-- Understand API models
-
-For the deployed application, use the live Swagger documentation linked at the top of this README.
+### 👥 User Management
+![User Management](screenshots/user-management.png)
 
 ---
 
-# 🧩 Core Platform Modules
+## 📁 Project Structure
+
+```
+IntelliICU/
+│
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── workflows/          ← GitHub Actions CI/CD
+│   └── pull_request_template.md
+│
+├── backend/                ← FastAPI Python backend
+│   ├── app/
+│   │   ├── main.py         ← Entry point
+│   │   ├── auth/           ← JWT authentication
+│   │   ├── clinical/       ← Clinical APIs
+│   │   ├── admin/          ← Admin APIs
+│   │   ├── models/         ← SQLAlchemy models
+│   │   └── schemas/        ← Pydantic schemas
+│   └── requirements.txt
+│
+├── frontend/               ← React + Vite frontend
+│   ├── src/
+│   │   ├── pages/          ← Page components
+│   │   ├── components/     ← Reusable UI components
+│   │   └── lib/            ← API client, utilities
+│   └── package.json
+│
+├── docker/                 ← Docker config files
+├── screenshots/            ← Application screenshots
+├── tests/                  ← Automated tests
+├── .env.example
+├── docker-compose.yml
+├── CONTRIBUTING.md
+└── README.md
+```
+
+---
+
+## 🧩 Core Platform Modules
 
 | Module | Description |
-|---|---|
-| 🔐 Authentication | Secure authentication and authorization |
-| 👨‍⚕️ Doctor Dashboard | Clinical dashboard for healthcare professionals |
+|--------|-------------|
+| 🔐 Authentication | Secure JWT-based auth with RBAC |
+| 👨‍⚕️ Doctor Dashboard | Clinical interface for healthcare professionals |
 | 🛡️ Admin Dashboard | Administrative platform management |
 | 🤖 Clinical Copilot | AI-assisted clinical decision support |
-| 🏥 Hospital Assistant | AI-powered hospital assistance |
-| 📡 Live Monitoring | Real-time patient and ICU monitoring |
-| 📈 Telemetry Monitor | Patient physiological telemetry visualization |
+| 🏥 Hospital Assistant | AI-powered hospital operations |
+| 📡 Live Monitoring | Real-time ICU patient monitoring |
+| 📈 Telemetry Monitor | Physiological telemetry visualization |
 | 👥 User Management | User and role administration |
-| 🔒 RBAC | Role-Based Access Control |
-| 🔌 REST API | Frontend-backend application communication |
-| ⚡ WebSockets | Real-time telemetry and dashboard communication |
-| 🗄️ PostgreSQL | Persistent relational data storage |
+| 🔌 REST API | Frontend-backend communication |
+| ⚡ WebSockets | Real-time telemetry streams |
+| 🗄️ PostgreSQL | Persistent clinical data storage |
 
 ---
 
-# 🔄 CI/CD
+## 🔄 CI/CD Pipeline
 
-IntelliICU uses GitHub Actions for continuous integration.
-
-The CI pipeline validates important parts of the application, including:
-
-- Backend dependency installation
-- Python application compile checks
-- Frontend dependency installation
-- Vite production build validation
-
-This helps identify integration and build problems before changes are deployed.
-
----
-
-# ☁️ Production Deployment
-
-The production architecture separates the application into independent services.
-
-```text
-Internet
-   │
-   ├──► React + Vite Frontend
-   │       │
-   │       └── Nginx
-   │            │
-   │            ▼
-   │         Railway
-   │
-   └──► FastAPI Backend
-           │
-           ▼
-        Railway
-           │
-           ▼
-       PostgreSQL
-```
-
-The frontend communicates with the backend through HTTPS REST APIs and secure WebSocket connections.
-
-Production environment variables are managed through the deployment platform.
-
----
-
-# 🧪 Testing
-
-The project includes a dedicated testing directory:
-
-```text
-tests/
-```
-
-Backend tests can be executed using:
+GitHub Actions validates every push:
+- ✅ Backend dependency installation
+- ✅ Python application compile check
+- ✅ Frontend dependency installation  
+- ✅ Vite production build validation
 
 ```bash
+# Manual test run
 pytest
+
+# Frontend build check
+cd frontend && npm run build
 ```
 
-Testing is an important part of the IntelliICU architecture to ensure:
+---
 
-- API reliability
-- Authentication correctness
-- Data validation
-- Clinical service reliability
-- Regression prevention
+## 🔮 Roadmap
+
+### v1.1 — Clinical AI Enhancements
+- [ ] Sepsis risk prediction model
+- [ ] Cardiac risk early warning system
+- [ ] Clinical deterioration scoring
+- [ ] Explainable AI (XAI) for model predictions
+
+### v1.2 — Platform Improvements
+- [ ] Advanced patient telemetry streams
+- [ ] Multi-hospital architecture
+- [ ] Clinical audit logging
+- [ ] Push notification and alert system
+
+### v2.0 — Enterprise & Integrations
+- [ ] FHIR / HL7 integration
+- [ ] EHR system connectors
+- [ ] Medical imaging integration
+- [ ] Wearable device data ingestion
+- [ ] Kubernetes deployment
+- [ ] AI model versioning and monitoring
 
 ---
 
-# 🗺️ Future Roadmap
+## ⚠️ Medical Disclaimer
 
-Planned future improvements include:
+IntelliICU is built for **educational, research, demonstration, and portfolio purposes**.
 
-- Advanced AI Clinical Decision Support
-- Multi-Hospital Architecture
-- Multi-Tenant Support
-- Real-Time ICU Event Streaming
-- Advanced Patient Telemetry
-- Early Warning Systems
-- Sepsis Risk Prediction
-- Cardiac Risk Prediction
-- Clinical Deterioration Prediction
-- Explainable AI (XAI)
-- AI Model Monitoring
-- Model Versioning
-- Clinical Audit Logging
-- Notification and Alert System
-- FHIR Integration
-- HL7 Integration
-- Electronic Health Record (EHR) Integration
-- Medical Imaging Integration
-- Wearable Device Integration
-- Advanced Role-Based Access Control
-- Kubernetes Deployment
-- Advanced CI/CD
-- Cloud-Native Infrastructure
-- Observability and Monitoring
+- Not a certified medical device
+- Not intended for direct clinical diagnosis
+- Does not replace qualified healthcare professionals
+- Should not be the sole basis for medical decisions
+
+All AI-generated recommendations should be treated as **decision-support information only**. Clinical decisions must always be made by qualified professionals using appropriate judgment.
 
 ---
 
-# 🎯 Project Goals
+## 🤝 Contributing
 
-The primary goals of IntelliICU are to demonstrate practical experience in:
-
-- Enterprise Software Architecture
-- Healthcare Software Engineering
-- Artificial Intelligence
-- Machine Learning Integration
-- Clinical Decision Support Systems
-- Full-Stack Development
-- REST API Design
-- Authentication and Authorization
-- Role-Based Access Control
-- Real-Time Monitoring Systems
-- WebSocket Communication
-- Database Architecture
-- Docker Containerization
-- Cloud Deployment
-- CI/CD
-- Scalable System Design
-- Production-Oriented Software Development
-
----
-
-# ⚠️ Medical Disclaimer
-
-IntelliICU is developed for **educational, research, demonstration, and portfolio purposes**.
-
-The platform:
-
-- Is not a certified medical device.
-- Is not intended for direct clinical diagnosis.
-- Is not intended to replace qualified healthcare professionals.
-- Should not be used as the sole basis for medical decisions.
-- Does not provide professional medical advice.
-
-Any AI-generated predictions, recommendations, alerts, or clinical information produced by the system should be treated as **decision-support information only**.
-
-Clinical decisions must always be made by qualified healthcare professionals using appropriate clinical judgment.
-
----
-
-# 🤝 Contributing
-
-Contributions, suggestions, and improvements are welcome.
-
-Please refer to:
-
-```text
-CONTRIBUTING.md
-```
-
-for contribution guidelines.
-
-General contribution workflow:
+Contributions and suggestions welcome. See `CONTRIBUTING.md` for guidelines.
 
 ```bash
 git checkout -b feature/your-feature-name
 git add .
 git commit -m "feat: add your feature"
 git push origin feature/your-feature-name
+# Then open a Pull Request
 ```
 
-Then create a Pull Request.
+---
+
+## 🔒 Security
+
+- Never commit `.env` files or production credentials
+- Never expose database passwords or JWT secrets
+- Always validate incoming data
+- Apply principle of least privilege
+- For production healthcare use — additional regulatory, compliance, and clinical governance requirements apply
 
 ---
 
-# 🔒 Security
+## 📄 License
 
-Healthcare applications require strong security practices.
-
-When contributing to or deploying IntelliICU:
-
-- Never commit `.env` files.
-- Never expose database credentials.
-- Never commit API keys.
-- Never store plaintext passwords.
-- Use secure JWT secrets.
-- Apply proper authentication and authorization.
-- Validate all incoming data.
-- Follow the principle of least privilege.
-
-For production healthcare use, additional regulatory, security, privacy, compliance, validation, and clinical governance requirements would be necessary.
+MIT License — see `LICENSE` file for details.
 
 ---
 
-# 📄 License
-
-This project is licensed under the terms specified in the:
-
-```text
-LICENSE
-```
-
-file included in this repository.
-
----
-
-# 👨‍💻 Author
+## 👨‍💻 Developer
 
 **Sumeet Sonar**
-
-B.E. Information Technology — 2026
-
-AI, Data Science & Full-Stack Development
-
-Interested in building enterprise AI systems, healthcare technology, and intelligent software platforms.
+- 🎓 B.E. Information Technology — 2026
+- 💡 AI, Data Science & Full-Stack Development
+- 🐙 [GitHub](https://github.com/Sumeet2005)
 
 ---
 
-# ⭐ Support
-
-If you find IntelliICU interesting or useful, consider giving the repository a **⭐ Star**.
-
-It helps support the project and its continued development.
+> ⭐ If IntelliICU is useful or interesting to you, give it a star — it helps others discover the project and supports continued development.
 
 ---
 
 <p align="center">
-  <strong>IntelliICU</strong>
-</p>
-
-<p align="center">
-  Building the future of AI-powered Clinical Decision Support and Intelligent Healthcare Systems.
+  <strong>IntelliICU — Building the future of AI-powered Clinical Decision Support</strong>
 </p>
