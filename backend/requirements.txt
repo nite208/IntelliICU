@@ -1,0 +1,61 @@
+# =========================
+# FastAPI
+# =========================
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+gunicorn>=23.0.0
+python-multipart>=0.0.9
+
+# =========================
+# Configuration
+# =========================
+pydantic>=2.8.0
+pydantic-settings>=2.4.0
+python-dotenv>=1.0.1
+email-validator>=2.2.0
+
+# =========================
+# Database
+# =========================
+sqlalchemy>=2.0.35
+alembic>=1.13.2
+psycopg[binary]>=3.2.1
+
+# =========================
+# Authentication
+# =========================
+PyJWT>=2.9.0
+bcrypt>=4.2.0
+
+# =========================
+# Scientific / ML
+# =========================
+numpy>=2.1.0
+pandas>=2.2.2
+joblib>=1.4.2
+
+# =========================
+# AI / LLM
+# =========================
+openai>=1.51.0
+google-generativeai>=0.8.3
+
+# =========================
+# RAG
+# =========================
+chromadb>=0.5.5
+sentence-transformers>=3.0.1
+langchain-community>=0.3.1
+langchain-text-splitters>=0.3.0
+
+# =========================
+# Documents
+# =========================
+pypdf>=5.0.0
+python-docx>=1.1.2
+reportlab>=4.2.2
+
+# =========================
+# Logging
+# =========================
+structlog>=24.4.0
