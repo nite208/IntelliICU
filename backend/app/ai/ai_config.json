@@ -1,0 +1,7 @@
+{
+  "provider": "ollama",
+  "model": "mock-model",
+  "temperature": 0.2,
+  "max_tokens": 1024,
+  "streaming": true
+}
