@@ -1,0 +1,3 @@
+"""
+IntelliICU backend application package.
+"""
