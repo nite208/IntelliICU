@@ -1,0 +1,73 @@
+<<<<<<< HEAD
+# Amrut Hospital ICU Configuration
+
+hospital:
+  name: "Amrut Hospital"
+  icu_capacity: 20
+  location: "Mumbai, India"
+
+# Alert Settings
+alerts:
+  enabled: true
+  
+  # Email Configuration
+  email:
+    enabled: false  # Set to true when you configure email
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    from_email: "your_email@gmail.com"
+    from_password: "your_app_password_here"
+    recipients:
+      critical:
+        - "doctor@amruthospital.com"
+      high:
+        - "nurse@amruthospital.com"
+      medium:
+        - "staff@amruthospital.com"
+  
+  # SMS Configuration (Twilio)
+  sms:
+    enabled: false  # Set to true when you configure Twilio
+    account_sid: "your_twilio_account_sid"
+    auth_token: "your_twilio_auth_token"
+    from_number: "+1234567890"
+    recipients:
+      critical:
+        - "+919876543210"
+  
+  # Voice Alerts
+  voice:
+    enabled: true  # This works immediately!
+    volume: 0.8
+    rate: 150
+
+# AI Assistant
+assistant:
+  enabled: false  # Set to true if you have OpenAI API key
+  model: "gpt-3.5-turbo"
+  api_key: "your_openai_api_key_here"
+  temperature: 0.3
+  max_history: 10
+
+# Explainer Settings
+explainer:
+  enabled: true
+  top_features: 5
+  
+# Treatment Recommendations
+recommendations:
+  enabled: true
+  evidence_based: true
+=======
+alerts:
+  sms:
+    enabled: false
+    recipients:
+      critical: []
+      high: []
+
+  voice:
+    enabled: false
+    rate: 150
+    volume: 1.0
+>>>>>>> ef612b66014052d7cabbde5495b63940d3ae54df
