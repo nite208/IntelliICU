@@ -155,7 +155,7 @@ Right now in every hospital, clinical teams face:
 | Live Application | [Open IntelliICU](#) |
 | Backend API | [IntelliICU Backend](#) |
 | API Docs (Swagger) | [FastAPI Swagger Docs](#) |
-| GitHub | [github.com/Sumeet2005/IntelliICU](https://github.com/Sumeet2005/IntelliICU) |
+| GitHub | [github.com/nite208/IntelliICU](https://github.com/nite208/IntelliICU) |
 
 ---
 
@@ -427,10 +427,13 @@ MIT License — see `LICENSE` file for details.
 
 ## 👨‍💻 Developer
 
-**Sumeet Sonar**
-- 🎓 B.E. Information Technology — 2026
-- 💡 AI, Data Science & Full-Stack Development
-- 🐙 [GitHub](https://github.com/Sumeet2005)
+**Nitesh Kumawat**
+- 🎓 Computer Engineering (Honours in Data Science), ISBM College of Engineering, Pune — 2026
+- 🏆 Oracle Certified Generative AI Professional
+- 🌐 Google Student Ambassador — AI/Gemini
+- 💼 [LinkedIn](https://linkedin.com/in/nitesh-kumawat-185356289)
+- 🐙 [GitHub](https://github.com/nite208)
+- 📧 niteshkumawat2331@gmail.com
 
 ---
 
