@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 
 import useWebSocket from "../../hooks/useWebSocket";
+import { useClinicalAI } from "../../context/ClinicalAIContext";
 import AlertDrawer from "./AlertDrawer";
 
 const severityStyles = {
@@ -36,7 +37,11 @@ const severityStyles = {
 };
 
 export default function AlertsSection() {
-  const { alertsData, patientsData } = useWebSocket();
+  const { activeAlerts, patientsList } = useClinicalAI();
+  const { alertsData: wsAlertsData, patientsData: wsPatientsData } = useWebSocket();
+
+  const alertsData = (activeAlerts && activeAlerts.length > 0) ? activeAlerts : (wsAlertsData || []);
+  const patientsData = (patientsList && patientsList.length > 0) ? patientsList : (wsPatientsData || []);
 
   const [selectedAlert, setSelectedAlert] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);

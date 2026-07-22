@@ -26,6 +26,20 @@ export default function VitalsOverview() {
   const vitalsData = selectedPatient?.vitals || {};
   const risk = recommendation?.risk_progress;
 
+  // Resolve primary patient risk score and level to ensure consistency across all pages
+  const rawRiskScore = selectedPatient?.patient?.risk_score ?? selectedPatient?.risk_score ?? risk?.current_risk ?? (vitalsData.heart_rate > 120 ? 0.75 : 0.1);
+  const resolvedRiskScore = typeof rawRiskScore === "number" ? rawRiskScore : parseFloat(rawRiskScore) || 0.1;
+  const rawRiskLevel = selectedPatient?.patient?.risk_level ?? selectedPatient?.risk_level ?? (resolvedRiskScore >= 0.7 ? "HIGH" : resolvedRiskScore >= 0.4 ? "MEDIUM" : "LOW");
+  const resolvedRiskLevel = String(rawRiskLevel).toUpperCase();
+  
+  const baselineRiskScore = risk?.previous_risk ?? (resolvedRiskScore > 0.3 ? resolvedRiskScore * 0.8 : resolvedRiskScore * 0.9);
+
+  const trendLabel = resolvedRiskLevel === "HIGH" || resolvedRiskLevel === "CRITICAL"
+    ? "DETERIORATING"
+    : resolvedRiskLevel === "MEDIUM"
+    ? "WATCH / ELEVATED"
+    : "STABLE";
+
   const [activeMetric, setActiveMetric] = useState("heartRate");
   const [history, setHistory] = useState([]);
   const [loadingPatient, setLoadingPatient] = useState(false);
@@ -337,7 +351,7 @@ export default function VitalsOverview() {
                   Baseline Risk
                 </p>
                 <p className="text-lg font-black text-slate-800 mt-1">
-                  {((risk?.previous_risk ?? 0) * 100).toFixed(0)}%
+                  {(baselineRiskScore * 100).toFixed(0)}%
                 </p>
               </div>
 
@@ -345,8 +359,10 @@ export default function VitalsOverview() {
                 <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">
                   Current Risk Index
                 </p>
-                <p className="text-lg font-black text-slate-850 mt-1">
-                  {((risk?.current_risk ?? 0) * 100).toFixed(0)}%
+                <p className={`text-lg font-black mt-1 ${
+                  resolvedRiskScore >= 0.7 ? "text-red-600 font-extrabold" : resolvedRiskScore >= 0.4 ? "text-orange-600 font-extrabold" : "text-emerald-600 font-extrabold"
+                }`}>
+                  {(resolvedRiskScore * 100).toFixed(0)}% ({resolvedRiskLevel})
                 </p>
               </div>
 
@@ -354,8 +370,10 @@ export default function VitalsOverview() {
                 <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">
                   Physiological Trend
                 </p>
-                <p className="text-lg font-black text-slate-800 mt-1 uppercase">
-                  {risk?.trend ?? "Stable"}
+                <p className={`text-lg font-black mt-1 uppercase ${
+                  resolvedRiskScore >= 0.7 ? "text-red-600 font-extrabold" : resolvedRiskScore >= 0.4 ? "text-orange-600 font-extrabold" : "text-emerald-600 font-extrabold"
+                }`}>
+                  {trendLabel}
                 </p>
               </div>
             </div>

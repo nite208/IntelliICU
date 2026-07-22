@@ -1,6 +1,6 @@
 import { BarChart3 } from "lucide-react";
 
-import LiveAnalytics from "../../components/dashboardV2/LiveAnalytics";
+import AnalyticsAggregateSection from "../../components/dashboardV2/AnalyticsAggregateSection";
 import HospitalAnalytics from "../../components/dashboardV2/HospitalAnalytics";
 import KPISection from "../../components/dashboardV2/KPISection";
 
@@ -25,7 +25,7 @@ export default function Analytics() {
 
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 xl:col-span-8">
-          <LiveAnalytics />
+          <AnalyticsAggregateSection />
         </div>
         <div className="col-span-12 xl:col-span-4">
           <HospitalAnalytics />

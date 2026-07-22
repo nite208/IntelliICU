@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import HeroBanner from "../../components/dashboardV2/HeroBanner";
 import KPISection from "../../components/dashboardV2/KPISection";
-import LiveAnalytics from "../../components/dashboardV2/LiveAnalytics";
+import HospitalSummarySection from "../../components/dashboardV2/HospitalSummarySection";
 import PatientsSection from "../../components/dashboardV2/PatientsSection";
 import AIRecommendation from "../../components/dashboardV2/AIRecommendation";
 import ActivityFeed from "../../components/dashboardV2/ActivityFeed";
@@ -153,7 +153,7 @@ function DoctorDashboard() {
       <KPISection />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 xl:col-span-8">
-          <LiveAnalytics />
+          <HospitalSummarySection />
         </div>
         <div className="col-span-12 xl:col-span-4">
           <HospitalAnalytics />
@@ -210,7 +210,7 @@ function ICUManagerDashboard() {
       <KPISection />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 xl:col-span-8">
-          <LiveAnalytics />
+          <HospitalSummarySection />
         </div>
         <div className="col-span-12 xl:col-span-4">
           <BedOccupancyChart />
