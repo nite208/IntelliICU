@@ -33,7 +33,7 @@ export default function Landing() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#0a0e1a] text-slate-100 font-sans relative overflow-x-hidden">
+    <div className="min-h-screen w-full bg-[#0a0e1a] text-slate-100 font-sans relative">
       {/* Inline styles for custom animations like ECG trace */}
       <style>{`
         @keyframes ecgSweep {
@@ -358,26 +358,26 @@ export default function Landing() {
               <div className="flex items-center gap-2 pb-2 border-b border-slate-800/50">
                 <Terminal size={14} className="text-slate-500" />
                 <span className="font-mono text-[9px] font-bold text-slate-400 uppercase tracking-widest">
-                  SANDBOX CLEARANCE LOGS
+                  SANDBOX ROLE ACCESS
                 </span>
               </div>
               <div className="space-y-3.5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-1">
                   <span className="font-bold text-slate-300 flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
-                    Administrator Account
+                    Administrator Role
                   </span>
-                  <span className="font-mono text-slate-400 bg-slate-900/80 px-2.5 py-1 rounded border border-slate-800 text-[11px] self-start sm:self-auto">
-                    admin / admin123
+                  <span className="font-mono text-purple-400 bg-purple-950/40 px-2.5 py-1 rounded border border-purple-800/40 text-[11px] font-semibold self-start sm:self-auto">
+                    Full System Clearance
                   </span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-1">
                   <span className="font-bold text-slate-300 flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
-                    Intensivist / MD Account
+                    Intensivist / MD Role
                   </span>
-                  <span className="font-mono text-slate-400 bg-slate-900/80 px-2.5 py-1 rounded border border-slate-800 text-[11px] self-start sm:self-auto">
-                    reyes / intensivist123
+                  <span className="font-mono text-cyan-400 bg-cyan-950/40 px-2.5 py-1 rounded border border-cyan-800/40 text-[11px] font-semibold self-start sm:self-auto">
+                    Clinical Surveillance
                   </span>
                 </div>
               </div>
