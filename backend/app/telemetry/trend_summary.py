@@ -93,6 +93,24 @@ class TrendSummarizer:
             if CLASSIFICATION_SEVERITY.get(cl, 0) > CLASSIFICATION_SEVERITY.get(overall_class, 0):
                 overall_class = cl
 
+        # Synchronize with simulator patient risk score if available
+        sim_risk_score = 0.0
+        try:
+            from app.websocket.simulator import simulator
+            sim_p = next((sp for sp in simulator.patients if sp["id"] == patient_id), None)
+            if sim_p:
+                sim_risk_score = float(sim_p.get("risk_score", 0.0))
+                sim_level = sim_p.get("risk_level", "LOW")
+                if sim_level == "HIGH" or sim_risk_score >= 0.70:
+                    overall_alert = "CRITICAL"
+                    overall_class = "Critical"
+                elif sim_level == "MEDIUM" or sim_risk_score >= 0.40:
+                    if ALERT_SEVERITY.get("WARNING", 0) > ALERT_SEVERITY.get(overall_alert, 0):
+                        overall_alert = "WARNING"
+                        overall_class = "Declining"
+        except Exception:
+            pass
+
         # ------------------------------------------------------------------
         # 2. Categorise parameters by alert level
         # ------------------------------------------------------------------
@@ -141,12 +159,13 @@ class TrendSummarizer:
         narrative = self._generate_narrative(results, overall_class, overall_alert)
 
         # ------------------------------------------------------------------
-        # 5. Combined early deterioration score (max across parameters)
+        # 5. Combined early deterioration score (max across parameters & simulator score)
         # ------------------------------------------------------------------
-        combined_det_score = max(
+        calc_det_score = max(
             (r.get("deterioration_score", 0.0) for r in results.values()),
             default=0.0,
         )
+        combined_det_score = max(calc_det_score, sim_risk_score)
 
         return {
             "patient_id":            patient_id,

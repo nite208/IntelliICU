@@ -3,16 +3,18 @@ Clinical Copilot Router.
 Exposes endpoints for chat reasoning, patient context inquiries, and clinical report generation.
 """
 
-from fastapi import APIRouter, HTTPException, Response
+from fastapi import APIRouter, HTTPException, Response, Depends
 from fastapi.responses import StreamingResponse
 from app.schemas.clinical_chat import ClinicalChatRequest, ClinicalChatResponse
 from app.schemas.clinical_report import ClinicalReportRequest, ClinicalReportResponse
 from app.services.clinical_copilot_service import ClinicalCopilotService
 from app.services.report_generator import ClinicalReportGenerator
+from app.core.dependencies.rbac import require_roles
 
 router = APIRouter(
     prefix="/clinical-copilot",
     tags=["Clinical Copilot"],
+    dependencies=[Depends(require_roles(["superadmin", "hospitaladmin", "icumanager", "doctor", "nurse"]))]
 )
 
 service = ClinicalCopilotService()

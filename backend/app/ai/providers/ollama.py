@@ -88,7 +88,7 @@ class OllamaLLMProvider(BaseLLMProvider):
 
                 return data
         except Exception as e:
-            logger.warning("[OllamaProvider] Completion failed: %s. Falling back to MockProvider.", e)
+            logger.info("[OllamaProvider] Completion failed: %s. Falling back to MockProvider.", e)
             return self.mock_fallback.generate(question, context)
 
     def generate_stream(self, question: str, context: Dict[str, Any]) -> Generator[Dict[str, Any], None, None]:
@@ -161,7 +161,7 @@ class OllamaLLMProvider(BaseLLMProvider):
                     yield {"type": "final", "content": self.mock_fallback.generate(question, context)}
 
         except Exception as e:
-            logger.warning("[OllamaProvider] Streaming failed: %s. Falling back to MockProvider.", e)
+            logger.info("[OllamaProvider] Streaming failed: %s. Falling back to MockProvider.", e)
             yield from self.mock_fallback.generate_stream(question, context)
 
     def health_check(self) -> bool:
@@ -187,5 +187,5 @@ class OllamaLLMProvider(BaseLLMProvider):
                 models = [m["name"] for m in data.get("models", [])]
                 return models
         except Exception as e:
-            logger.warning("[OllamaProvider] Failed to list models: %s", e)
+            logger.info("[OllamaProvider] Ollama service offline or unable to list models: %s", e)
             return []

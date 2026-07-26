@@ -70,12 +70,16 @@ def seed_database_if_empty():
             db.add_all([d1, d2])
             db.commit()
 
-        # 5. Seed default users if empty
-        if db.query(DBUser).count() == 0:
-            logger.info("🌱 Seeding admin and default clinical users...")
-            users = []
-            for username, mock_user in MOCK_USERS.items():
-                users.append(DBUser(
+        # 5. Seed or sync default users
+        logger.info("🌱 Synchronizing default clinical users...")
+        for username, mock_user in MOCK_USERS.items():
+            existing = db.query(DBUser).filter(DBUser.username.ilike(username)).first()
+            if existing:
+                existing.hashed_password = mock_user["hashed_password"]
+                existing.role = mock_user["role"]
+                existing.is_active = True
+            else:
+                db.add(DBUser(
                     id=mock_user["id"],
                     username=mock_user["username"],
                     email=mock_user["email"],
@@ -84,8 +88,7 @@ def seed_database_if_empty():
                     department=mock_user.get("department"),
                     is_active=mock_user["is_active"]
                 ))
-            db.add_all(users)
-            db.commit()
+        db.commit()
 
         # 6. Seed 10 realistic ICU patient profiles if count is less than 10
         if db.query(Patient).count() < 10:

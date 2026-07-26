@@ -100,5 +100,13 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
+    def model_post_init(self, __context) -> None:
+        insecure_default = "intelliicu_super_secret_key_change_me_in_production"
+        if not self.AUTH_SECRET_KEY or self.AUTH_SECRET_KEY.strip() == "" or self.AUTH_SECRET_KEY == insecure_default:
+            raise RuntimeError(
+                "CRITICAL SECURITY ERROR: AUTH_SECRET_KEY is unset or using the default insecure fallback. "
+                "Set a secure AUTH_SECRET_KEY in your environment or .env file before starting the server."
+            )
+
 
 settings = Settings()

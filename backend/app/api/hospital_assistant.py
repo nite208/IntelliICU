@@ -14,15 +14,18 @@ Endpoints:
 
 from __future__ import annotations
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from app.services.hospital_assistant_service import hospital_assistant
+from app.core.dependencies.rbac import require_roles
+from app.models.user import User
 
 router = APIRouter(
     prefix="/hospital-assistant",
     tags=["Hospital Assistant"],
+    dependencies=[Depends(require_roles(["superadmin", "hospitaladmin", "icumanager", "doctor", "nurse", "receptionist"]))]
 )
 
 
