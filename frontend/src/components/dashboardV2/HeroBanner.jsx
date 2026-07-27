@@ -53,30 +53,30 @@ export default function HeroBanner() {
       initial={{ opacity: 0, y: 25 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-slate-900 via-[#0B2942] to-cyan-900 py-6 px-8 text-white shadow-2xl"
+      className="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-[#070b14] via-[#091220] to-[#0c192e] py-7 px-8 text-white shadow-xl border border-slate-800/80"
     >
-      {/* Background Glow */}
-      <div className="absolute -top-32 -right-20 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"></div>
-      <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+      {/* Subtle Background Glows */}
+      <div className="absolute -top-32 -right-20 h-80 w-80 rounded-full bg-amber-500/10 blur-3xl"></div>
+      <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl"></div>
 
-      <div className="relative grid grid-cols-12 gap-8">
+      <div className="relative grid grid-cols-12 gap-8 items-center">
 
         {/* Left Side */}
         <div className="col-span-12 lg:col-span-7">
 
-          <div className="inline-flex items-center gap-2 rounded-full bg-cyan-500/20 border border-cyan-400/30 px-4 py-2 text-sm backdrop-blur">
+          <div className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 text-xs font-semibold text-amber-400 backdrop-blur">
 
-            <BrainCircuit size={18} />
+            <BrainCircuit size={16} className="text-amber-400" />
 
             {label}
 
           </div>
 
-          <h1 className="mt-4 text-5xl font-black leading-tight">
+          <h1 className="mt-4 text-4xl font-extrabold tracking-tight leading-tight text-white">
 
-            {title}
+            {title}{" "}
 
-            <span className="block text-cyan-300">
+            <span className="block bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
 
               {coloredTitle}
 
@@ -84,7 +84,7 @@ export default function HeroBanner() {
 
           </h1>
 
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300">
 
             {subtitle}
 
@@ -94,21 +94,21 @@ export default function HeroBanner() {
 
         {/* Right Side - Clinical Summary Box */}
         <div className="col-span-12 lg:col-span-5 flex flex-col justify-center">
-          <div className="rounded-2xl border border-cyan-400/20 bg-black/20 p-6 backdrop-blur">
+          <div className="rounded-2xl border border-slate-700/60 bg-slate-900/60 p-6 backdrop-blur shadow-inner">
             <div className="flex items-center gap-3">
-              <Sparkles className="text-cyan-300 animate-pulse" />
-              <h3 className="font-semibold text-base">
+              <Sparkles className="text-amber-400 animate-pulse" size={18} />
+              <h3 className="font-bold text-sm text-slate-100 uppercase tracking-wider">
                 {cardTitle}
               </h3>
             </div>
 
-            <p className="mt-4 text-sm leading-7 text-slate-300">
+            <p className="mt-3 text-xs leading-relaxed text-slate-300">
               {cardBody}
             </p>
             
-            <div className="mt-6 border-t border-white/10 pt-4 flex justify-between text-xs text-slate-400">
+            <div className="mt-5 border-t border-slate-800 pt-3 flex justify-between text-[11px] text-slate-400">
               <span>{footerLeft}</span>
-              <span className="text-cyan-300 font-bold">{footerRight}</span>
+              <span className="text-amber-400 font-bold">{footerRight}</span>
             </div>
           </div>
         </div>

@@ -480,14 +480,56 @@ export default function PatientDrawer({ open, patientId, onClose }) {
 
                       {/* AI Clinical Summary */}
                       {profile.ai?.summary && (
-                        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-5 shadow-sm">
-                          <div className="flex items-center gap-2 mb-3">
-                            <Brain className="w-5 h-5 text-indigo-600" />
-                            <h3 className="text-sm font-bold text-indigo-900 uppercase tracking-wider">AI Clinical Summary</h3>
+                        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-5 shadow-sm space-y-3">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <Brain className="w-5 h-5 text-indigo-600" />
+                              <h3 className="text-sm font-bold text-indigo-900 uppercase tracking-wider">AI Clinical Summary</h3>
+                            </div>
+                            {typeof profile.ai.summary === 'object' && profile.ai.summary?.confidence != null && (
+                              <span className="text-xs font-bold text-indigo-700 bg-indigo-100/80 px-2.5 py-1 rounded-full">
+                                Confidence: {Math.round(profile.ai.summary.confidence > 1 ? profile.ai.summary.confidence : profile.ai.summary.confidence * 100)}%
+                              </span>
+                            )}
                           </div>
-                          <p className="text-indigo-900/80 leading-relaxed text-sm">
-                            {profile.ai.summary}
-                          </p>
+
+                          {typeof profile.ai.summary === 'string' ? (
+                            <p className="text-indigo-900/80 leading-relaxed text-sm font-medium">{profile.ai.summary}</p>
+                          ) : (
+                            <div className="space-y-3 text-sm">
+                              {profile.ai.summary?.overall_condition && (
+                                <div className="flex items-center gap-2">
+                                  <span className="text-xs font-bold text-indigo-950 uppercase tracking-wide">Overall Condition:</span>
+                                  <span className="font-bold text-indigo-800 bg-white/70 px-2.5 py-0.5 rounded-lg border border-indigo-200">
+                                    {profile.ai.summary.overall_condition}
+                                  </span>
+                                </div>
+                              )}
+
+                              {profile.ai.summary?.clinical_reasoning && (
+                                <div>
+                                  <span className="text-xs font-bold text-indigo-950 uppercase tracking-wide block mb-1">Clinical Reasoning:</span>
+                                  <p className="text-indigo-900/80 leading-relaxed text-xs font-medium bg-white/50 p-3 rounded-lg border border-indigo-100/60 whitespace-pre-wrap">
+                                    {profile.ai.summary.clinical_reasoning}
+                                  </p>
+                                </div>
+                              )}
+
+                              {Array.isArray(profile.ai.summary?.priority_actions) && profile.ai.summary.priority_actions.length > 0 && (
+                                <div>
+                                  <span className="text-xs font-bold text-indigo-950 uppercase tracking-wide block mb-1.5">Priority Actions:</span>
+                                  <ul className="space-y-1 text-xs text-indigo-900">
+                                    {profile.ai.summary.priority_actions.map((action, idx) => (
+                                      <li key={idx} className="flex items-start gap-1.5 bg-white/60 p-2 rounded-md border border-indigo-100">
+                                        <span className="text-indigo-600 font-bold">•</span>
+                                        <span>{typeof action === 'object' ? JSON.stringify(action) : action}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                            </div>
+                          )}
                         </div>
                       )}
 

@@ -156,7 +156,7 @@ function DoctorDashboard() {
           <HospitalSummarySection />
         </div>
         <div className="col-span-12 xl:col-span-4">
-          <HospitalAnalytics />
+          <BedOccupancyChart />
         </div>
       </div>
       <div className="grid grid-cols-12 gap-6">
@@ -185,7 +185,7 @@ function NurseDashboard() {
     <div className="space-y-8">
       <HeroBanner />
       <KPISection />
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-12 gap-6 items-start">
         <div className="col-span-12 xl:col-span-8">
           <PatientsSection />
         </div>
@@ -193,7 +193,7 @@ function NurseDashboard() {
           <ClinicalTasks />
         </div>
       </div>
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-12 gap-6 items-start">
         <div className="col-span-12">
           <LiveAlerts />
         </div>
@@ -208,7 +208,7 @@ function ICUManagerDashboard() {
     <div className="space-y-8">
       <HeroBanner />
       <KPISection />
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-12 gap-6 items-start">
         <div className="col-span-12 xl:col-span-8">
           <HospitalSummarySection />
         </div>
@@ -216,7 +216,7 @@ function ICUManagerDashboard() {
           <BedOccupancyChart />
         </div>
       </div>
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-12 gap-6 items-start">
         <div className="col-span-12 xl:col-span-7">
           <LiveAlerts />
         </div>

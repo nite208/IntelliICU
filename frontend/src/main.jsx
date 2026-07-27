@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
+import ErrorBoundary from "./components/common/ErrorBoundary";
 
 import { AuthProvider } from "./context/AuthContext";
 import { PatientProvider } from "./context/PatientContext";
@@ -15,20 +16,22 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <PatientProvider>
-          <DashboardProvider>
-            <AlertProvider>
-              <TimelineProvider>
-                <ClinicalAIProvider>
-                  <App />
-                </ClinicalAIProvider>
-              </TimelineProvider>
-            </AlertProvider>
-          </DashboardProvider>
-        </PatientProvider>
-      </AuthProvider>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <AuthProvider>
+          <PatientProvider>
+            <DashboardProvider>
+              <AlertProvider>
+                <TimelineProvider>
+                  <ClinicalAIProvider>
+                    <App />
+                  </ClinicalAIProvider>
+                </TimelineProvider>
+              </AlertProvider>
+            </DashboardProvider>
+          </PatientProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </ErrorBoundary>
   </React.StrictMode>
 );

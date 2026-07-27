@@ -26,15 +26,11 @@ const wsProtocol =
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL ||
-  (isProduction
-    ? "https://intelliicu-production.up.railway.app/api"
-    : `${protocol}//${hostname}:8000/api`);
+  `${protocol}//${hostname}:8000/api`;
 
 const WS_BASE_URL =
   import.meta.env.VITE_WS_BASE_URL ||
-  (isProduction
-    ? "wss://intelliicu-production.up.railway.app/ws"
-    : `${wsProtocol}//${hostname}:8000/ws`);
+  `${wsProtocol}//${hostname}:8000/ws`;
 
 const config = {
   API_BASE_URL,

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Lock, Mail, Shield, Briefcase, X, ShieldAlert, Key } from "lucide-react";
+import { Stethoscope, Lock, Mail, Shield, Briefcase, X, ShieldAlert, Key } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { userService } from "../services/userService";
 
@@ -52,11 +52,18 @@ export default function UserProfile() {
   };
 
   return (
-    <div className="p-8 max-w-2xl mx-auto space-y-6">
+    <div className="max-w-2xl mx-auto space-y-6">
       {/* Header */}
-      <div className="border-b border-slate-100 pb-5">
-        <h1 className="text-3xl font-black text-slate-800">My Clinical Profile</h1>
-        <p className="mt-1 text-xs text-slate-500">View personal metadata and secure login credentials</p>
+      <div className="rounded-2xl bg-gradient-to-r from-[#070b14] via-[#091220] to-[#0c192e] p-6 text-white shadow-xl border border-slate-800/80 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 p-3 text-amber-400">
+            <Stethoscope size={24} />
+          </div>
+          <div>
+            <h1 className="text-2xl font-extrabold tracking-tight">My Clinical Profile</h1>
+            <p className="mt-1 text-xs text-slate-400">View personal metadata and secure login credentials</p>
+          </div>
+        </div>
       </div>
 
       {/* Main card */}

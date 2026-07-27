@@ -90,14 +90,14 @@ export default function TelemetryDashboard() {
   return (
     <div className="space-y-6">
       {/* ── Header ── */}
-      <div className="rounded-2xl bg-gradient-to-r from-slate-900 via-[#0B2942] to-cyan-950 p-6 text-white shadow-md">
+      <div className="rounded-2xl bg-gradient-to-r from-[#070b14] via-[#091220] to-[#0c192e] p-6 text-white shadow-xl border border-slate-800/80">
         <div className="flex items-center gap-4">
-          <div className="rounded-xl bg-white/10 p-3">
+          <div className="rounded-xl bg-sky-500/10 border border-sky-500/20 p-3 text-sky-400">
             <Radio size={24} />
           </div>
           <div>
-            <h1 className="text-2xl font-black">Enterprise Telemetry Monitor</h1>
-            <p className="mt-1 text-xs text-slate-350">
+            <h1 className="text-2xl font-extrabold tracking-tight">Enterprise Telemetry Monitor</h1>
+            <p className="mt-1 text-xs text-slate-400">
               Continuous ICU vital sign trend analysis · 7 parameters · Rolling window
             </p>
           </div>
@@ -108,10 +108,10 @@ export default function TelemetryDashboard() {
               </span>
             )}
             <div
-              className={`flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold ${
+              className={`flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-bold ${
                 connected
-                  ? "bg-emerald-500/20 text-emerald-300"
-                  : "bg-red-500/20 text-red-300"
+                  ? "bg-emerald-500/10 border border-emerald-500/20 text-emerald-400"
+                  : "bg-red-500/10 border border-red-500/20 text-red-400"
               }`}
             >
               {connected ? <Wifi size={12} /> : <WifiOff size={12} />}

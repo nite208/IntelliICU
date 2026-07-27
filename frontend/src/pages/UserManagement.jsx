@@ -203,18 +203,23 @@ export default function UserManagement() {
   const totalPages = Math.ceil(total / size) || 1;
 
   return (
-    <div className="p-8 space-y-6">
+    <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-100 pb-5">
-        <div>
-          <h1 className="text-3xl font-black text-slate-800">User Management</h1>
-          <p className="mt-1 text-xs text-slate-500">Manage clinical suite system users, roles, and department profiles</p>
+      <div className="rounded-2xl bg-gradient-to-r from-[#070b14] via-[#091220] to-[#0c192e] p-6 text-white shadow-xl border border-slate-800/80 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="rounded-xl bg-indigo-500/10 border border-indigo-500/20 p-3 text-indigo-400">
+            <Users size={24} />
+          </div>
+          <div>
+            <h1 className="text-2xl font-extrabold tracking-tight">User Directory & RBAC Governance</h1>
+            <p className="mt-1 text-xs text-slate-400">Manage clinical suite system users, roles, and department profiles</p>
+          </div>
         </div>
         <button
           onClick={() => { resetForms(); setAddOpen(true); }}
-          className="btn-clinical-primary"
+          className="px-4 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold rounded-xl text-xs shadow-md transition flex items-center gap-2"
         >
-          <Plus size={14} />
+          <Plus size={16} />
           Create New User
         </button>
       </div>

@@ -155,30 +155,14 @@ export default function PatientsSection() {
 
               {/* Analyze Button */}
               <button
-                onClick={async (e) => {
+                onClick={(e) => {
                   e.stopPropagation();
-
-                  // Run AI Analysis
-                  await handleAnalyze(patient);
-
-                  // Open Patient Drawer
-                  setDrawerPatientId(patient.id);
-                  setDrawerOpen(true);
+                  handlePatientSelect(patient);
                 }}
-                disabled={loading}
-                className="rounded-xl bg-cyan-600 px-5 py-3 text-white transition hover:bg-cyan-700 disabled:opacity-60"
+                className="rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold px-4 py-2.5 text-xs shadow-md transition flex items-center gap-2"
               >
-                {loading ? (
-                  <Loader2
-                    className="animate-spin"
-                    size={18}
-                  />
-                ) : (
-                  <div className="flex items-center gap-2">
-                    <BrainCircuit size={18} />
-                    Analyze
-                  </div>
-                )}
+                <BrainCircuit size={16} />
+                <span>Analyze Patient</span>
               </button>
             </div>
           </motion.div>

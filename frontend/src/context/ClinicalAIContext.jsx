@@ -112,6 +112,10 @@ export function ClinicalAIProvider({ children }) {
     } = useTimeline();
 
   const loadTimeline = async (patientId) => {
+    if (!patientId || patientId === "undefined") {
+      setTimelineEvents([]);
+      return;
+    }
     try {
       const data = await timelineService.getTimeline(patientId);
       setTimelineEvents(data || []);
@@ -160,6 +164,8 @@ export function ClinicalAIProvider({ children }) {
       currentLiveAlerts = [...currentLiveAlerts, ...patientAlerts];
     });
 
+    const newAuditEvents = [];
+
     setAlerts(prev => {
       const updated = prev.map(a => ({ ...a }));
       const liveIds = new Set(currentLiveAlerts.map(a => a.id));
@@ -175,7 +181,6 @@ export function ClinicalAIProvider({ children }) {
             time: alert.resolvedAt,
             by: "System",
           }];
-
         }
       });
 
@@ -197,27 +202,36 @@ export function ClinicalAIProvider({ children }) {
             }],
           });
 
-          addAuditEvent(
+          const event = auditService.createEvent(
             liveAlert.id,
             "Created",
             `System generated alert: ${liveAlert.message} for ${liveAlert.patient_name}`,
             timestamp
           );
+          newAuditEvents.push(event);
         }
       });
 
       return updated;
     });
+
+    if (newAuditEvents.length > 0) {
+      setAuditTrail(prev => [...prev, ...newAuditEvents]);
+    }
   }, [patientsList]);
 
   // Escalation engine effect running in background checking unacknowledged critical alerts
   useEffect(() => {
     const interval = setInterval(() => {
       const now = Date.now();
+      const newAuditEvents = [];
+
       setAlerts(prev => {
         let changed = false;
         const updated = prev.map(alert => {
-          const escalated = escalationService.checkEscalation(alert, now, addAuditEvent);
+          const escalated = escalationService.checkEscalation(alert, now, (alertId, action, detail, time) => {
+            newAuditEvents.push(auditService.createEvent(alertId, action, detail, time));
+          });
           if (escalated) {
             changed = true;
             return escalated;
@@ -227,6 +241,10 @@ export function ClinicalAIProvider({ children }) {
 
         return changed ? updated : prev;
       });
+
+      if (newAuditEvents.length > 0) {
+        setAuditTrail(prev => [...prev, ...newAuditEvents]);
+      }
     }, 5000);
 
     return () => clearInterval(interval);

@@ -309,13 +309,13 @@ export default function HospitalAssistant() {
     <div className="space-y-6">
 
       {/* ── Header ── */}
-      <div className="rounded-2xl bg-gradient-to-r from-slate-900 via-[#071B35] to-[#0B2942] p-6 text-white shadow-lg">
+      <div className="rounded-2xl bg-gradient-to-r from-[#070b14] via-[#091220] to-[#0c192e] p-6 text-white shadow-xl border border-slate-800/80">
         <div className="flex items-center gap-4">
-          <div className="rounded-xl bg-white/10 p-3 border border-white/10">
+          <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 p-3 text-amber-400">
             <Building2 size={24} />
           </div>
           <div>
-            <h1 className="text-2xl font-black">IntelliAI Hospital Command Centre</h1>
+            <h1 className="text-2xl font-extrabold tracking-tight">IntelliAI Hospital Command Centre</h1>
             <p className="mt-1 text-xs text-slate-400">
               Hospital-wide AI clinical intelligence · All ICU patients · Real-time
             </p>

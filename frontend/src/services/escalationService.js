@@ -26,12 +26,14 @@ export const escalationService = {
         by: "System",
       });
 
-      addAuditEvent(
-        alert.id,
-        "Escalated",
-        `Alert escalated from ${prevLvl} to ${newEsc} due to no response.`,
-        timeStr
-      );
+      if (typeof addAuditEvent === "function") {
+        addAuditEvent(
+          alert.id,
+          "Escalated",
+          `Alert escalated from ${prevLvl} to ${newEsc} due to no response.`,
+          timeStr
+        );
+      }
 
       return {
         ...alert,

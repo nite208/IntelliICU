@@ -171,7 +171,7 @@ Right now in every hospital, clinical teams face:
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/Sumeet2005/IntelliICU.git
+git clone https://github.com/nite208/IntelliICU.git
 cd IntelliICU
 ```
 

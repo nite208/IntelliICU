@@ -4,7 +4,7 @@ import { lazy, Suspense } from "react";
 import Layout from "./layouts/Layout";
 
 import AuthGuard from "./components/auth/AuthGuard";
-import PermissionGuard from "./components/auth/PermissionGuard";
+import RoleGuard from "./components/auth/RoleGuard";
 
 // Lazy Loaded Pages
 const Dashboard = lazy(() => import("./pages/DashboardV2"));
@@ -17,6 +17,7 @@ const UserManagement = lazy(() => import("./pages/UserManagement"));
 const UserProfile = lazy(() => import("./pages/UserProfile"));
 const Telemetry = lazy(() => import("./pages/Telemetry"));
 const HospitalAssistant = lazy(() => import("./pages/HospitalAssistant"));
+const ClinicalCopilot = lazy(() => import("./pages/ClinicalCopilot"));
 const Unauthorized = lazy(() => import("./pages/Unauthorized"));
 const Landing = lazy(() => import("./pages/Landing"));
 
@@ -46,81 +47,93 @@ export default function App() {
             </AuthGuard>
           }
         >
-
+          {/* Dashboard (Admin, HospitalAdmin, ICUManager, Doctor, Nurse) */}
           <Route
             path="/dashboard"
             element={
-              <PermissionGuard requiredPermission="Dashboard" showFallback>
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin", "icumanager", "doctor", "nurse"]}>
                 <Dashboard />
-              </PermissionGuard>
+              </RoleGuard>
             }
           />
 
+          {/* Patient Details Profile */}
           <Route
             path="/patients/:patientId"
             element={
-              <PermissionGuard requiredPermission="Patients" showFallback>
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin", "icumanager", "doctor", "nurse", "labtechnician", "viewer"]}>
                 <PatientProfile />
-              </PermissionGuard>
+              </RoleGuard>
             }
           />
 
+          {/* Live Monitoring */}
           <Route
             path="/monitoring"
             element={
-              <PermissionGuard requiredPermission="Patients" showFallback>
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin", "icumanager", "doctor", "nurse", "viewer"]}>
                 <Monitoring />
-              </PermissionGuard>
+              </RoleGuard>
             }
           />
 
-          <Route
-            path="/analytics"
-            element={
-              <PermissionGuard requiredPermission="Analytics" showFallback>
-                <Analytics />
-              </PermissionGuard>
-            }
-          />
-
-          <Route
-            path="/settings"
-            element={
-              <PermissionGuard requiredPermission="Settings" showFallback>
-                <Settings />
-              </PermissionGuard>
-            }
-          />
-
-          <Route
-            path="/users"
-            element={
-              <PermissionGuard requiredPermission="UserManagement" showFallback>
-                <UserManagement />
-              </PermissionGuard>
-            }
-          />
-
-          <Route
-            path="/profile"
-            element={<UserProfile />}
-          />
-
+          {/* Telemetry Trends */}
           <Route
             path="/telemetry"
             element={
-              <PermissionGuard requiredPermission="Patients" showFallback>
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin", "icumanager", "doctor", "nurse", "labtechnician", "viewer"]}>
                 <Telemetry />
-              </PermissionGuard>
+              </RoleGuard>
             }
           />
 
+          {/* Analytics */}
+          <Route
+            path="/analytics"
+            element={
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin", "icumanager"]}>
+                <Analytics />
+              </RoleGuard>
+            }
+          />
+
+          {/* Hospital Assistant */}
           <Route
             path="/hospital-assistant"
             element={
-              <PermissionGuard requiredPermission="ClinicalAI" showFallback>
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin", "icumanager", "doctor", "nurse", "receptionist"]}>
                 <HospitalAssistant />
-              </PermissionGuard>
+              </RoleGuard>
+            }
+          />
+
+          {/* User Directory */}
+          <Route
+            path="/users"
+            element={
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin"]}>
+                <UserManagement />
+              </RoleGuard>
+            }
+          />
+
+          {/* Settings (AI Config) */}
+          <Route
+            path="/settings"
+            element={
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin"]}>
+                <Settings />
+              </RoleGuard>
+            }
+          />
+
+          {/* My Profile */}
+          <Route
+            path="/profile"
+            element={
+              <RoleGuard allowedRoles={["superadmin", "hospitaladmin", "icumanager", "doctor", "nurse", "labtechnician", "receptionist", "viewer"]}>
+                <UserProfile />
+              </RoleGuard>
             }
           />
 
