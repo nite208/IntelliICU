@@ -259,7 +259,7 @@ GET  /api/departments
 ![Landing Page](screenshots/landing_page.png)
 
 ### Login
-![Login](screenshots/login_png)
+![Login](screenshots/login_page.png)
 
 ### Admin Dashboard
 ![Admin Dashboard](screenshots/admin_dashboard.png)
