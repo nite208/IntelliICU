@@ -262,25 +262,25 @@ GET  /api/departments
 ![Login](screenshots/login.png)
 
 ### Admin Dashboard
-![Admin Dashboard](screenshots/admin_dashboard.jpeg)
+![Admin Dashboard](screenshots/admin_dashboard.png)
 
 ### Doctor Dashboard
-![Doctor Dashboard](screenshots/doctor_dashboard.jpeg)
+![Doctor Dashboard](screenshots/doctor_dashboard.png)
 
 ### Patient Analysis — Clinical Copilot Tab
-![Clinical Copilot](screenshots/clinical_copilot.jpeg)
+![Clinical Copilot](screenshots/clinical_copilot.png)
 
 ### Hospital Assistant
-![Hospital Assistant](screenshots/hospital_assistant.jpeg)
+![Hospital Assistant](screenshots/hospital_assistant.png)
 
 ### Live Monitoring
-![Live Monitoring](screenshots/live_monitoring.jpeg)
+![Live Monitoring](screenshots/live_monitoring.png)
 
 ### Telemetry Monitor
-![Telemetry Monitor](screenshots/telemetry_monitor.jpeg)
+![Telemetry Monitor](screenshots/telemetry_monitor.png)
 
 ### User Management
-![User Management](screenshots/user_management.jpeg)
+![User Management](screenshots/user_management.png)
 ---
 
 ## Project Structure
