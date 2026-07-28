@@ -514,7 +514,7 @@ export default function Landing() {
 
           <div className="text-center text-xs text-slate-400 font-medium space-y-1">
             <p>Licensed under the MIT License.</p>
-            <p>Maintained & Extended by <span className="text-white font-semibold">Nitesh Kumawat (nite208)</span>. Originally created as a collaborative clinical project.</p>
+            <p>Built for clinical portfolio demonstrations by <span className="text-white font-semibold">Nitesh Kumawat (nite208)</span>.</p>
           </div>
 
           <div className="flex items-center gap-4">
