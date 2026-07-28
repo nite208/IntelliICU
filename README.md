@@ -128,7 +128,7 @@ IntelliICU brings an AI copilot directly into the clinical workflow, giving clin
 
 | Service | URL |
 |---------|-----|
-| Live Application | [ ] |
+| Live Application | [intelli-icu.vercel.app] |
 | Backend API | [ ] |
 | API Docs (Swagger) | [ ] |
 | GitHub | [github.com/nite208/IntelliICU](https://github.com/nite208/IntelliICU) |
