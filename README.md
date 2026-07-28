@@ -255,30 +255,32 @@ GET  /api/departments
 
 ## Screenshots
 
+### Landing Page
+![Landing Page](screenshots/landing_page.png)
+
 ### Login
-[ ]
+![Login](screenshots/login.png)
 
 ### Admin Dashboard
-[ ]
+![Admin Dashboard](screenshots/admin_dashboard.jpeg)
 
 ### Doctor Dashboard
-[ ]
+![Doctor Dashboard](screenshots/doctor_dashboard.jpeg)
 
 ### Patient Analysis — Clinical Copilot Tab
-[ ]
+![Clinical Copilot](screenshots/clinical_copilot.jpeg)
 
 ### Hospital Assistant
-[ ]
+![Hospital Assistant](screenshots/hospital_assistant.jpeg)
 
 ### Live Monitoring
-[ ]
+![Live Monitoring](screenshots/live_monitoring.jpeg)
 
 ### Telemetry Monitor
-[ ]
+![Telemetry Monitor](screenshots/telemetry_monitor.jpeg)
 
 ### User Management
-[ ]
-
+![User Management](screenshots/user_management.jpeg)
 ---
 
 ## Project Structure
